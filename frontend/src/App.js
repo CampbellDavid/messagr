@@ -16,7 +16,6 @@ import SecureRoute from './components/common/SecureRoute'
 
 // media_messages dir
 import MessageIndex from './components/media_messages/MessageIndex'
-import MessageView from './components/media_messages/MessageView'
 
 // user dir
 import Contacts from './components/user/Contacts'
@@ -34,7 +33,6 @@ function App() {
 					<Route path='/login' component={Login} />
 					<Route path='/register' component={Register} />
 
-					<SecureRoute path='/messages/:id' component={MessageView} />
 					<SecureRoute path='/messages' component={MessageIndex} />
 
 					<SecureRoute path='/users/:id/contacts' component={Contacts} />
