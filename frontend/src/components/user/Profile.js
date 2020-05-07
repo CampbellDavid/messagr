@@ -12,7 +12,7 @@ class Profile extends React.Component {
 		const userId = Auth.getPayload().sub
 		console.log('userId =', userId)
 		try {
-			const res = await axios.get(`/api/user/${userId}`)
+			const res = await axios.get(`/api/users/${userId}`)
 			console.log(res.data)
 			this.setState({ user: res.data })
 			console.log(this.state.data)
@@ -25,16 +25,11 @@ class Profile extends React.Component {
 		console.log(this.state.user)
 		if (!this.state.user) return null
 		return (
-			<section>
-				<div className='title-div'>
-					<h1>Profile</h1>
-				</div>
-				{/* <div className='profile-div'></div> */}
+			<section className='mt-5 bg-color font'>
+				<h1 className='pt-5 text-center text-light'>My Account</h1>
 			</section>
 		)
 	}
 }
 
 export default Profile
-
-// condense all pages into single page with multiple elements
