@@ -28,12 +28,13 @@ class Contacts extends React.Component {
 				<h1 className='pt-5 text-center text-light'>Contacts</h1>
 				<div>
 					{this.state.user.contacts.length === 0 ? (
-						<h2 className='font'>No contacts</h2>
+						<p className='font text-light'>No contacts</p>
 					) : (
 						this.state.user.contacts.map((contact, i) => (
-							<h2 key={i} className='font'>
+							<p key={i} className='font text-light'>
 								{contact.first_name}
-							</h2>
+								{/* contact card to replace above line */}
+							</p>
 						))
 					)}
 				</div>
