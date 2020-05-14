@@ -39,7 +39,7 @@ class Contacts extends React.Component {
 					)}
 				</div>
 				<div>
-					<button>Add contact</button>
+					<button className='font btn btn-light'>Add contact</button>
 					{/* link above to form */}
 				</div>
 			</section>
