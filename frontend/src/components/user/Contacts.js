@@ -39,8 +39,18 @@ class Contacts extends React.Component {
 					)}
 				</div>
 				<div>
-					<button className='font btn btn-light'>Add contact</button>
-					{/* link above to form */}
+					<form onSubmit={this.handleSubmit}>
+						<input
+							className='form-field p-2 m-2 font rounded'
+							onChange={this.handleChange}
+							placeholder='username'
+							name='username'
+							id='username'
+							required
+						/>
+						<button className='font btn btn-light'>Add contact</button>
+						{/* link above to form */}
+					</form>
 				</div>
 			</section>
 		)

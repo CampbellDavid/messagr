@@ -60,6 +60,7 @@ class MessageIndex extends React.Component {
 		return (
 			<section className='mt-5 bg-color font'>
 				<h1 className='pt-5 text-center text-light'>New Message</h1>
+
 				<div className='p-4'>
 					{this.state.messages.owner === owner
 						? this.state.messages.map((message, i) => (

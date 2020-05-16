@@ -39,7 +39,7 @@ function App() {
 					<SecureRoute path='/users/:id/amend' component={UserAmend} />
 					<SecureRoute path='/users/:id' component={Profile} />
 
-					<Route exact path='/*' component={ErrorPage} />
+					<Route path='/*' component={ErrorPage} />
 				</Switch>
 			</BrowserRouter>
 		</main>
