@@ -32,8 +32,7 @@ class Contacts extends React.Component {
 					) : (
 						this.state.user.contacts.map((contact, i) => (
 							<p key={i} className='font text-light'>
-								{contact.first_name}
-								{/* contact card to replace above line */}
+								{contact.first_name} {contact.last_name}
 							</p>
 						))
 					)}
@@ -49,7 +48,6 @@ class Contacts extends React.Component {
 							required
 						/>
 						<button className='font btn btn-light'>Add contact</button>
-						{/* link above to form */}
 					</form>
 				</div>
 			</section>
