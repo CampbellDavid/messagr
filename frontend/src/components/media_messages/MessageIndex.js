@@ -59,76 +59,78 @@ class MessageIndex extends React.Component {
 
 		return (
 			<section className='mt-5 bg-color font'>
-				<div className='p-4 col-4'>
-					<p>
-						{this.state.user.contacts.length === 0 ? (
-							<p>No contacts</p>
-						) : (
-							this.state.user.contacts.map((contact) => (
-								<p>
-									{contact.first_name} {contact.last_name}
-								</p>
-							))
-						)}
-					</p>
-				</div>
-				<div className='p-4 col-8'>
-					{this.state.messages.owner === owner
-						? this.state.messages.map((message, i) => (
-								<p className='owner-msg' key={i}>
-									{message.content}
-								</p>
-						  ))
-						: this.state.messages.map((message, i) => (
-								<p className='recipient-msg' key={i}>
-									{message.content}
-								</p>
-						  ))}
+				<div className='row'>
+					<div className='p-4 col-4'>
+						<p>
+							{this.state.user.contacts.length === 0 ? (
+								<p>No contacts</p>
+							) : (
+								this.state.user.contacts.map((contact) => (
+									<p>
+										{contact.first_name} {contact.last_name}
+									</p>
+								))
+							)}
+						</p>
+					</div>
+					<div className='p-4 col-8'>
+						{this.state.messages.owner === owner
+							? this.state.messages.map((message, i) => (
+									<p className='owner-msg' key={i}>
+										{message.content}
+									</p>
+							  ))
+							: this.state.messages.map((message, i) => (
+									<p className='recipient-msg' key={i}>
+										{message.content}
+									</p>
+							  ))}
 
-					<form onSubmit={this.handleSubmit}>
-						<div className='mb-2'>
-							<label className='text-light'>To:</label>
-							<select
-								className='ml-2 rounded form-field'
-								name='recipient'
-								id='recipient'
-							>
-								{this.state.user.contacts.length < 1 ? (
-									<option selected disabled>
-										No contacts
-									</option>
-								) : (
-									this.state.user.contacts.map((contact, i) => {
-										return (
-											<option key={i}>
-												{contact.first_name} {contact.last_name}
-											</option>
-										)
-									})
-								)}
-							</select>
-						</div>
+						<form onSubmit={this.handleSubmit}>
+							<div className='mb-2'>
+								<label className='text-light'>To:</label>
+								<select
+									className='ml-2 rounded form-field'
+									name='recipient'
+									id='recipient'
+								>
+									{this.state.user.contacts.length < 1 ? (
+										<option selected disabled>
+											No contacts
+										</option>
+									) : (
+										this.state.user.contacts.map((contact, i) => {
+											return (
+												<option key={i}>
+													{contact.first_name} {contact.last_name}
+												</option>
+											)
+										})
+									)}
+								</select>
+							</div>
 
-						<textarea
-							className='form-field rounded p-2 mb-2 col-10'
-							rows='3'
-							style={{ resize: 'none' }}
-							onChange={this.handleChange}
-							placeholder='Text here...'
-							name='content'
-							id='content'
-							disabled={this.state.user.contacts.length < 1 ? true : false}
-						/>
-						<div>
-							<button
-								className='font btn btn-light'
-								type='submit'
+							<textarea
+								className='form-field rounded p-2 mb-2 col-10'
+								rows='3'
+								style={{ resize: 'none' }}
+								onChange={this.handleChange}
+								placeholder='Text here...'
+								name='content'
+								id='content'
 								disabled={this.state.user.contacts.length < 1 ? true : false}
-							>
-								Send
-							</button>
-						</div>
-					</form>
+							/>
+							<div>
+								<button
+									className='font btn btn-light'
+									type='submit'
+									disabled={this.state.user.contacts.length < 1 ? true : false}
+								>
+									Send
+								</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</section>
 		)
