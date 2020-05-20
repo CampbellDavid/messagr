@@ -87,29 +87,6 @@ class MessageIndex extends React.Component {
 							  ))}
 
 						<form onSubmit={this.handleSubmit}>
-							<div className='mb-2'>
-								<label className='text-light'>To:</label>
-								<select
-									className='ml-2 rounded form-field'
-									name='recipient'
-									id='recipient'
-								>
-									{this.state.user.contacts.length < 1 ? (
-										<option selected disabled>
-											No contacts
-										</option>
-									) : (
-										this.state.user.contacts.map((contact, i) => {
-											return (
-												<option key={i}>
-													{contact.first_name} {contact.last_name}
-												</option>
-											)
-										})
-									)}
-								</select>
-							</div>
-
 							<textarea
 								className='form-field rounded p-2 mb-2 col-10'
 								rows='3'
