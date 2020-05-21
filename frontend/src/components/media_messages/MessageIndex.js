@@ -60,7 +60,7 @@ class MessageIndex extends React.Component {
 		return (
 			<section className='mt-5 bg-color font'>
 				<div className='row'>
-					<div className='p-4 col-4'>
+					<div className='p-4 col-4' style={{ overflowX: 'hidden' }}>
 						<p>
 							{this.state.user.contacts.length === 0 ? (
 								<p>No contacts</p>
