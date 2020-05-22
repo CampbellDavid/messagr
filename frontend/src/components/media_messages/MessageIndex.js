@@ -86,27 +86,31 @@ class MessageIndex extends React.Component {
 									</p>
 							  ))}
 
-						<form onSubmit={this.handleSubmit}>
-							<textarea
-								className='form-field rounded p-2 mb-2 col-10'
-								rows='3'
-								style={{ resize: 'none' }}
-								onChange={this.handleChange}
-								placeholder='Text here...'
-								name='content'
-								id='content'
-								disabled={this.state.user.contacts.length < 1 ? true : false}
-							/>
-							<div>
-								<button
-									className='font btn btn-light'
-									type='submit'
+						<div>
+							<form onSubmit={this.handleSubmit}>
+								<textarea
+									className='form-field rounded p-2 mb-2 col-12'
+									rows='3'
+									style={{ resize: 'none' }}
+									onChange={this.handleChange}
+									placeholder='Text here...'
+									name='content'
+									id='content'
 									disabled={this.state.user.contacts.length < 1 ? true : false}
-								>
-									Send
-								</button>
-							</div>
-						</form>
+								/>
+								<div>
+									<button
+										className='font btn btn-light'
+										type='submit'
+										disabled={
+											this.state.user.contacts.length < 1 ? true : false
+										}
+									>
+										Send
+									</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</section>
