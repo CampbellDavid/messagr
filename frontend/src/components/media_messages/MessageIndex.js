@@ -90,9 +90,9 @@ class MessageIndex extends React.Component {
 							  ))}
 
 						<div>
-							<form onSubmit={this.handleSubmit}>
+							<form onSubmit={this.handleSubmit} className='d-flex'>
 								<textarea
-									className='form-field rounded p-2 mb-2 col-12'
+									className='form-field rounded p-2 mb-2 col-11'
 									rows='3'
 									style={{ resize: 'none' }}
 									onChange={this.handleChange}
@@ -103,7 +103,8 @@ class MessageIndex extends React.Component {
 								/>
 								<div>
 									<button
-										className='font btn btn-light'
+										className='font btn btn-light ml-2'
+										style={{ height: '92%' }}
 										type='submit'
 										disabled={
 											this.state.user.contacts.length < 1 ? true : false
