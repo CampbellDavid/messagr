@@ -77,19 +77,21 @@ class MessageIndex extends React.Component {
 						</p>
 					</div>
 					<div className='p-4 col-8'>
-						{this.state.messages.owner === owner
-							? this.state.messages.map((message, i) => (
-									<p className='owner-msg' key={i}>
-										{message.content}
-									</p>
-							  ))
-							: this.state.messages.map((message, i) => (
-									<p className='recipient-msg' key={i}>
-										{message.content}
-									</p>
-							  ))}
+						<div style={{ height: '75%' }}>
+							{this.state.messages.owner === owner
+								? this.state.messages.map((message, i) => (
+										<p className='owner-msg' key={i}>
+											{message.content}
+										</p>
+								  ))
+								: this.state.messages.map((message, i) => (
+										<p className='recipient-msg' key={i}>
+											{message.content}
+										</p>
+								  ))}
+						</div>
 
-						<div>
+						<div style={{ height: '25%' }}>
 							<form onSubmit={this.handleSubmit} className='d-flex'>
 								<textarea
 									className='form-field rounded p-2 mb-2 col-11'
