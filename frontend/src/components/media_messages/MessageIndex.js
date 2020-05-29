@@ -58,7 +58,7 @@ class MessageIndex extends React.Component {
 		console.log('user', this.state.user.contacts)
 
 		return (
-			<section className='mt-5 bg-color font'>
+			<section className='mt-5 bg-color font' style={{ overflowX: 'hidden' }}>
 				<div className='row'>
 					<div
 						className='p-4 col-4 bg-dark'
