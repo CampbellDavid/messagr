@@ -78,7 +78,11 @@ class MessageIndex extends React.Component {
 					</div>
 					<div className='p-4 col-8'>
 						<div
-							style={{ height: '75%', border: '2px solid white' }}
+							style={{
+								height: '75%',
+								border: '2px solid white',
+								borderRadius: '5px',
+							}}
 							className='mb-2'
 						>
 							{this.state.messages.owner === owner
