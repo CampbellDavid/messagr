@@ -101,6 +101,28 @@ class Register extends React.Component {
 							<input
 								className='form-field p-2 m-2 font rounded'
 								onChange={this.handleChange}
+								placeholder='First Name'
+								name='first_name'
+								id='first_name'
+								required
+							/>
+						</div>
+
+						<div>
+							<input
+								className='form-field p-2 m-2 font rounded'
+								onChange={this.handleChange}
+								placeholder='Last Name'
+								name='last_name'
+								id='last_name'
+								required
+							/>
+						</div>
+
+						<div>
+							<input
+								className='form-field p-2 m-2 font rounded'
+								onChange={this.handleChange}
 								type='password'
 								placeholder='password'
 								name='password'
