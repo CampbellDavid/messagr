@@ -42,9 +42,9 @@ class Contacts extends React.Component {
 						<input
 							className='form-field p-2 m-2 font rounded'
 							onChange={this.handleChange}
-							placeholder='username'
-							name='username'
-							id='username'
+							placeholder='Email'
+							name='email'
+							id='email'
 							required
 						/>
 						<button className='font btn btn-light'>Add contact</button>
