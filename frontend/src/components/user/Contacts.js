@@ -56,4 +56,3 @@ class Contacts extends React.Component {
 }
 
 export default Contacts
-// comment for test commit
