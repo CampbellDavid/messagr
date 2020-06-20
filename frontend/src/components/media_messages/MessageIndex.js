@@ -105,7 +105,7 @@ class MessageIndex extends React.Component {
 									rows='3'
 									style={{ resize: 'none' }}
 									onChange={this.handleChange}
-									placeholder='Text here...'
+									placeholder='Text here'
 									name='content'
 									id='content'
 									disabled={this.state.user.contacts.length < 1 ? true : false}
