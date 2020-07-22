@@ -56,6 +56,7 @@ class MessageIndex extends React.Component {
 		if (!this.state.messages) return null
 		if (!this.state.user) return null
 		console.log('user', this.state.user.contacts)
+		console.log('msg', this.state.messages)
 
 		return (
 			<section className='mt-5 bg-color font' style={{ overflowX: 'hidden' }}>
@@ -87,12 +88,12 @@ class MessageIndex extends React.Component {
 						>
 							{this.state.messages.owner === owner
 								? this.state.messages.map((message, i) => (
-										<p className='owner-msg' key={i}>
+										<p className='owner-msg float-left' key={i}>
 											{message.content}
 										</p>
 								  ))
 								: this.state.messages.map((message, i) => (
-										<p className='recipient-msg' key={i}>
+										<p className='recipient-msg float-right' key={i}>
 											{message.content}
 										</p>
 								  ))}
