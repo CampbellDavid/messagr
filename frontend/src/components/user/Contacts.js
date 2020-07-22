@@ -6,7 +6,7 @@ import { headers } from './../../lib/headers'
 class Contacts extends React.Component {
 	state = {
 		user: null,
-		contactEmail: {},
+		contact_email: {},
 		errors: null,
 	}
 
@@ -23,21 +23,21 @@ class Contacts extends React.Component {
 	}
 
 	handleChange = (e) => {
-		const contactEmail = {
-			...this.state.contactEmail,
+		const contact_email = {
+			...this.state.contact_email,
 			[e.target.name]: e.target.value,
 		}
 		const user = { ...this.state.user, [e.target.name]: e.target.value }
 		const errors = { ...this.state.errors, [e.target.name]: '' }
-		this.setState({ user, contactEmail, errors })
+		this.setState({ user, contact_email, errors })
 	}
 
 	addContact = async (e) => {
 		e.preventDefault()
-		console.log(this.state.contactEmail)
+		console.log(this.state.contact_email)
 		const userId = Auth.getPayload().sub
 		try {
-			await axios.post(`api/users/${userId}`, this.state.contactEmail, headers)
+			await axios.post(`api/users/${userId}`, this.state.contact_email, headers)
 		} catch (error) {
 			console.log(error.response.data)
 		}
@@ -45,16 +45,16 @@ class Contacts extends React.Component {
 
 	render() {
 		console.log(this.state.user)
-		console.log(this.state.contactEmail)
+		console.log(this.state.contact_email)
 		if (!this.state.user) return null
 		return (
 			<section className='mt-5 bg-color font'>
 				<h1 className='pt-5 text-center text-light'>Contacts</h1>
 				<div>
-					{this.state.user.contacts.length === 0 ? (
+					{this.state.user.contact_email.length === 0 ? (
 						<p className='font text-light'>No contacts</p>
 					) : (
-						this.state.user.contacts.map((contact, i) => (
+						this.state.user.contact_email.map((contact, i) => (
 							<p key={i} className='font text-light'>
 								{contact.first_name} {contact.last_name}
 							</p>

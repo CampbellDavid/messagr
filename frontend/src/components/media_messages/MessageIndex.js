@@ -55,7 +55,7 @@ class MessageIndex extends React.Component {
 		const owner = Auth.getPayload().sub
 		if (!this.state.messages) return null
 		if (!this.state.user) return null
-		console.log('user', this.state.user.contacts)
+		console.log('user', this.state.user.contact_email)
 		console.log('msg', this.state.messages)
 
 		return (
@@ -66,10 +66,10 @@ class MessageIndex extends React.Component {
 						style={{ overflowX: 'hidden', height: '100vh' }}
 					>
 						<p>
-							{this.state.user.contacts.length === 0 ? (
+							{this.state.user.contact_email.length === 0 ? (
 								<p className='text-light'>No contacts</p>
 							) : (
-								this.state.user.contacts.map((contact) => (
+								this.state.user.contact_email.map((contact) => (
 									<p>
 										{contact.first_name} {contact.last_name}
 									</p>
@@ -109,7 +109,9 @@ class MessageIndex extends React.Component {
 									placeholder='Text here'
 									name='content'
 									id='content'
-									disabled={this.state.user.contacts.length < 1 ? true : false}
+									disabled={
+										this.state.user.contact_email.length < 1 ? true : false
+									}
 								/>
 								<div>
 									<button
@@ -117,7 +119,7 @@ class MessageIndex extends React.Component {
 										style={{ height: '92%' }}
 										type='submit'
 										disabled={
-											this.state.user.contacts.length < 1 ? true : false
+											this.state.user.contact_email.length < 1 ? true : false
 										}
 									>
 										Send

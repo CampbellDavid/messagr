@@ -47,4 +47,4 @@ class PartialUserSerializer(serializers.ModelSerializer):
 
 class PopulatedUserSerializer(UserSerializer):
     media_messages = PopulatedMediaMessageSerializer(many=True)
-    contacts = UserSerializer(many=True)
+    contact_email = UserSerializer(many=True)

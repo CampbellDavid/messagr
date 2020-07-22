@@ -7,4 +7,4 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)
     profile_image = models.CharField(max_length=500, blank=True)
-    contacts = models.ManyToManyField('self', blank=True)
+    contact_email = models.ManyToManyField('self', blank=True)
