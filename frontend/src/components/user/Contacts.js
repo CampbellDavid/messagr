@@ -6,6 +6,8 @@ import { headers } from './../../lib/headers'
 class Contacts extends React.Component {
 	state = {
 		user: null,
+		contactEmail: {},
+		errors: null,
 	}
 
 	async componentDidMount() {
@@ -20,8 +22,30 @@ class Contacts extends React.Component {
 		}
 	}
 
+	handleChange = (e) => {
+		const contactEmail = {
+			...this.state.contactEmail,
+			[e.target.name]: e.target.value,
+		}
+		const user = { ...this.state.user, [e.target.name]: e.target.value }
+		const errors = { ...this.state.errors, [e.target.name]: '' }
+		this.setState({ user, contactEmail, errors })
+	}
+
+	addContact = async (e) => {
+		e.preventDefault()
+		console.log(this.state.contactEmail)
+		const userId = Auth.getPayload().sub
+		try {
+			await axios.post(`api/users/${userId}`, this.state.contactEmail, headers)
+		} catch (error) {
+			console.log(error.response.data)
+		}
+	}
+
 	render() {
 		console.log(this.state.user)
+		console.log(this.state.contactEmail)
 		if (!this.state.user) return null
 		return (
 			<section className='mt-5 bg-color font'>
@@ -38,7 +62,7 @@ class Contacts extends React.Component {
 					)}
 				</div>
 				<div>
-					<form onSubmit={this.handleSubmit}>
+					<form onSubmit={this.addContact}>
 						<input
 							className='form-field p-2 m-2 font rounded'
 							onChange={this.handleChange}
